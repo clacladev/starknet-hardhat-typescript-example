@@ -6,7 +6,7 @@ First install Cairo on the machine. Follow [this guide](https://mirror.xyz/clacl
 
 Install the project dependencies:
 ```
-npx install
+yarn install
 ```
 
 
@@ -19,16 +19,16 @@ starknet-devnet
 In another tab:
 ```
 # Compile
-npx hardhat starknet-compile
+yarn hardhat starknet-compile
 
 # Test
-npx hardhat test
+yarn hardhat test
 
 # Deploy
-npx hardhat starknet-deploy --starknet-network devnet --inputs "123"
+yarn hardhat starknet-deploy --starknet-network devnet --inputs "123"
 
 # Deploy an account
-npx hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
+yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
 ```
 
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
