@@ -6,9 +6,9 @@ import "@shardlabs/starknet-hardhat-plugin";
  */
 const config: HardhatUserConfig = {
   starknet: {
-    // dockerizedVersion: "0.7.1", // alternatively choose one of the two venv options below
+    dockerizedVersion: "0.7.1", // alternatively choose one of the two venv options below
     // venv: "path/to/my-venv", // uses (my-venv) defined by `python -m venv path/to/my-venv`
-    venv: "active", // uses the currently active Python environment (hopefully with available Starknet commands!)
+    // venv: "active", // uses the currently active Python environment (hopefully with available Starknet commands!)
     network: "devnet",
     wallets: {
       OpenZeppelin: {
