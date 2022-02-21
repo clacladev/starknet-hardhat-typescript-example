@@ -4,11 +4,6 @@ Example setup.
 ## Install
 First install Cairo on the machine. Follow [this guide](https://mirror.xyz/clacla.eth/obrY1Y89LjH4xrc4C0GR5OLudLpJq5dKClSsTJBOVFg) on macOS.
 
-Install Docker devnet in case the venv version does not work:
-```
-docker pull shardlabs/starknet-devnet
-```
-
 Install the project dependencies:
 ```
 yarn install
@@ -16,18 +11,17 @@ yarn install
 
 
 ## Getting started
-In a tab start the devnet via venv (currently broken)
+In a tab start the devnet:
 ```
-# Via venv
+nvm use
 starknet-devnet
-
-# or via Docker
-docker run -it -p 127.0.0.1:5000:5000 shardlabs/starknet-devnet
 ```
 
 
 In another tab:
 ```
+nvm use
+
 # Compile
 yarn hardhat starknet-compile
 
