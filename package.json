@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "clacla.eth",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
