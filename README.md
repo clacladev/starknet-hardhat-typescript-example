@@ -3,9 +3,28 @@ Example setup of a Starknet-Hardhat-TypeScript project. This is an empty project
 
 
 ## Setup
-First install Cairo on the machine. Instructions [here](https://www.cairo-lang.org/docs/quickstart.html), or follow [this guide](https://mirror.xyz/clacla.eth/obrY1Y89LjH4xrc4C0GR5OLudLpJq5dKClSsTJBOVFg) if you're on macOS.
 
-Install the project dependencies:
+Install system dependencies:
+```
+brew install python gmp
+```
+
+Setup the python venv:
+```
+# Create a local venv
+python3 -m venv .venv
+
+# Activate it
+source .venv/bin/activate
+
+# Install cairo-lang in the local venv
+pip3 install cairo-lang
+```
+
+If you are on macOS and installing `cairo-lang` fails, use [this guide](https://mirror.xyz/clacla.eth/obrY1Y89LjH4xrc4C0GR5OLudLpJq5dKClSsTJBOVFg).
+
+
+Install the node dependencies:
 ```
 yarn install
 ```

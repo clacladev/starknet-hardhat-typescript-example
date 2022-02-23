@@ -8,6 +8,7 @@ artifacts
 #Python artifacts
 __pycache__
 .pytest_cache
+.venv
 
 #Starknet plugin
 starknet-artifacts
