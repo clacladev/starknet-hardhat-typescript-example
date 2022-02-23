@@ -18,7 +18,6 @@ nvm use
 starknet-devnet
 ```
 
-
 In another tab:
 ```
 nvm use
@@ -39,11 +38,10 @@ yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZepp
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
 
 
-## Links
+## Useful links
 Repo is inspired from [Starknet Hardhat Example](https://github.com/Shard-Labs/starknet-hardhat-example).
 Based on the [Starknet Hardhat plugin](https://github.com/Shard-Labs/starknet-hardhat-plugin).
 
 
 ## Author
-
 Claudio, clacla.eth
