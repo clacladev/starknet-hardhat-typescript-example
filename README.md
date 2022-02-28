@@ -20,11 +20,15 @@ python3 -m venv ~/cairo_venv
 source ~/cairo_venv/bin/activate
 
 # Install cairo-lang in the local venv
-pip3 install cairo-lang
+pip install cairo-lang
+
+# Install Starknet Devnet
+pip install starknet-devnet
 ```
 
 If you are on macOS and installing `cairo-lang` fails, use [this guide](https://mirror.xyz/clacla.eth/obrY1Y89LjH4xrc4C0GR5OLudLpJq5dKClSsTJBOVFg).
 
+If you want to learn more about devnet project, [here the repo](https://github.com/Shard-Labs/starknet-devnet).
 
 Install the node dependencies:
 ```
@@ -35,16 +39,18 @@ yarn install
 ## Getting started
 In a tab start the devnet:
 ```
+# Set correct version of Node and Python virtual environment
 nvm use
+source ~/cairo_venv/bin/activate
+
+# Start a new devnet with clean state
 starknet-devnet
 ```
 
 In another tab:
 ```
-# Set correct version of Node
+# Set correct version of Node and Python virtual environment
 nvm use
-
-# Activate the correct Python venv
 source ~/cairo_venv/bin/activate
 
 # Compile
