@@ -7,14 +7,17 @@ Install system dependencies (more details [here](https://www.cairo-lang.org/docs
 ```
 # Ubuntu
 sudo apt install -y libgmp3-dev
+
 # macOS
-brew install python gmp
+brew install pyenv gmp
+pyenv install 3.9.10
+pyenv global 3.9.10
 ```
 
 Setup the python venv:
 ```
 # Create a local venv
-python3 -m venv ~/cairo_venv
+python -m venv ~/cairo_venv
 
 # Activate it
 source ~/cairo_venv/bin/activate
