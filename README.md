@@ -3,26 +3,35 @@ Example setup of a Starknet-Hardhat-TypeScript project. This is an empty project
 
 
 ## Setup
+Install python's virtual environment to make sure this project uses specific versions of pythons and its dependencies:
+```
+# macOS
+brew install pyenv
+
+# Install specific version of python and set it as local default
+pyenv install 3.9.10
+pyenv local 3.9.10
+
+# Create a local venv
+python -m venv .venv
+
+# Activate it (execute this command for every terminal for the project)
+source .venv/bin/activate
+```
+
+
 Install system dependencies (more details [here](https://www.cairo-lang.org/docs/quickstart.html)):
 ```
 # Ubuntu
 sudo apt install -y libgmp3-dev
 
 # macOS
-brew install pyenv gmp
-pyenv install 3.9.10
-pyenv global 3.9.10
+brew install gmp
 ```
 
 Setup the python venv:
 ```
-# Create a local venv
-python -m venv ~/cairo_venv
-
-# Activate it
-source ~/cairo_venv/bin/activate
-
-# Install cairo-lang in the local venv
+# Install Cairo
 pip install cairo-lang
 
 # Install Starknet Devnet
@@ -33,7 +42,8 @@ If you are on macOS and installing `cairo-lang` fails, use [this guide](https://
 
 If you want to learn more about devnet project, [here the repo](https://github.com/Shard-Labs/starknet-devnet).
 
-Install the node dependencies:
+
+Install the Node.js dependencies:
 ```
 yarn install
 ```
@@ -44,7 +54,7 @@ In a tab start the devnet:
 ```
 # Set correct version of Node and Python virtual environment
 nvm use
-source ~/cairo_venv/bin/activate
+source .venv/bin/activate
 
 # Start a new devnet with clean state
 starknet-devnet
@@ -54,7 +64,7 @@ In another tab:
 ```
 # Set correct version of Node and Python virtual environment
 nvm use
-source ~/cairo_venv/bin/activate
+source .venv/bin/activate
 
 # Compile
 yarn hardhat starknet-compile
