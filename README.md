@@ -27,6 +27,9 @@ sudo apt install -y libgmp3-dev
 
 # macOS
 brew install gmp
+
+# On M1 based macOS
+CFLAGS=-I`brew --prefix gmp`/include LDFLAGS=-L`brew --prefix gmp`/lib pip3 install ecdsa fastecdsa sympy
 ```
 
 Setup the python venv:
@@ -74,6 +77,12 @@ yarn hardhat test
 
 # Deploy
 yarn hardhat starknet-deploy --starknet-network devnet --inputs "123"
+
+# Verify contract on Voyager
+yarn hardhat starknet-verify \
+  --starknet-network alpha \
+  --address 0x0123 \
+  --path ./contracts/contract.cairo
 
 # Deploy an account
 yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
