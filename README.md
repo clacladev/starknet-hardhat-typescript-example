@@ -94,6 +94,10 @@ code ~/.starknet_accounts/starknet_open_zeppelin_accounts.json
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
 
 
+## Disable ESLint
+In case you don't want ESLint helping you to format and pretty your TS code, just delete `.eslintrc.js` in root folder. then remove all the dependencies in `package.json` that mentions `eslint` and `yarn install` again.
+
+
 ## Useful links
 Repo is inspired from [Starknet Hardhat Example](https://github.com/Shard-Labs/starknet-hardhat-example).
 Based on the [Starknet Hardhat plugin](https://github.com/Shard-Labs/starknet-hardhat-plugin).
