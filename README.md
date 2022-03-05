@@ -86,6 +86,9 @@ yarn hardhat starknet-verify \
 
 # Deploy an account
 yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
+
+# Read the deployed account details
+code ~/.starknet_accounts/starknet_open_zeppelin_accounts.json
 ```
 
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
