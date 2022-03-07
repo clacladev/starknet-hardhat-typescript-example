@@ -78,12 +78,6 @@ yarn hardhat test
 # Deploy
 yarn hardhat starknet-deploy --starknet-network devnet --inputs "123"
 
-# Verify contract on Voyager
-yarn hardhat starknet-verify \
-  --starknet-network alpha \
-  --address 0x0123 \
-  --path ./contracts/contract.cairo
-
 # Deploy an account
 yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
 
@@ -92,6 +86,27 @@ code ~/.starknet_accounts/starknet_open_zeppelin_accounts.json
 ```
 
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
+
+
+## Verify your contract on Voyager (only on Alpha Goerli and Alpha Mainnet, no devnet)
+After deploying your contract on alpha, open it on Voyager and wait 10 minutes or so, for it to be indexed. You will be able to see the Read and Write interface when it is.
+```
+Alpha Goerli (testnet)
+https://goerli.voyager.online/contract/0x123
+
+Alpha Mainnet
+https://voyager.online/contract/0x123
+```
+
+When it has been indexed, then you can finally verify it:
+```
+yarn hardhat starknet-verify \
+  --starknet-network alpha \
+  --address 0x0123 \
+  --path ./contracts/contract.cairo
+```
+
+*Note: right now the verifier is quite limited to very simple contracts with dependencies in the same directory. So it's not really production ready*
 
 
 ## Disable ESLint
