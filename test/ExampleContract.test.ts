@@ -2,10 +2,10 @@ import { expect } from 'chai'
 import { starknet } from 'hardhat'
 import { StarknetContract, StarknetContractFactory } from 'hardhat/types/runtime'
 
-describe('Starknet', () => {
+describe('ExampleContract', () => {
   it('should work for a fresh deployment', async () => {
     console.log('Started deployment')
-    const contractFactory: StarknetContractFactory = await starknet.getContractFactory('contract')
+    const contractFactory: StarknetContractFactory = await starknet.getContractFactory('ExampleContract')
     const contract: StarknetContract = await contractFactory.deploy({ initial_balance: 0 })
     console.log('Deployed at', contract.address)
 

@@ -76,7 +76,7 @@ yarn hardhat starknet-compile
 yarn hardhat test
 
 # Deploy
-yarn hardhat starknet-deploy --starknet-network devnet --inputs "123"
+yarn hardhat starknet-deploy ExampleContract --starknet-network devnet --inputs "123"
 
 # Deploy an account
 yarn hardhat starknet-deploy-account --starknet-network devnet --wallet OpenZeppelin
