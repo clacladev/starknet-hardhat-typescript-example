@@ -3,22 +3,25 @@ Example setup of a Starknet-Hardhat-TypeScript project. This is an empty project
 
 
 ## Setup
-Install python's virtual environment to make sure this project uses specific versions of pythons and its dependencies:
+You need to install a python's virtual environment to make sure this project uses specific versions of pythons and its dependencies.
+
+On macOS download [Miniconda](https://docs.conda.io/en/latest/miniconda.html#macos-installers), then:
 ```
-# macOS
-brew install pyenv
+# Install
+sh ~/Downloads/Miniconda3-xxx.sh 
 
-# Install specific version of python and set it as local default
-pyenv install 3.9.10
-pyenv local 3.9.10
+# Update
+conda update -n base -c defaults conda
 
-# Create a local venv
-python -m venv .venv
-
-# Activate it (execute this command for every terminal for the project)
-source .venv/bin/activate
+# Open new shell and test that python is selected via miniconda
+which python
 ```
 
+Create and setup conda environment:
+```
+conda create --name starknet-example-env python=3.8.11
+conda activate starknet-example-env
+```
 
 Install system dependencies (more details [here](https://www.cairo-lang.org/docs/quickstart.html)):
 ```
@@ -48,6 +51,16 @@ If you want to learn more about devnet project, [here the repo](https://github.c
 
 Install the Node.js dependencies:
 ```
+# Install NVM to manage multiple versions of Node.js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# Install the required version
+nvm install
+
+# Select the required version
+nvm use
+
+# Install the project Node's dependencies
 yarn install
 ```
 
@@ -57,7 +70,7 @@ In a tab start the devnet:
 ```
 # Set correct version of Node and Python virtual environment
 nvm use
-source .venv/bin/activate
+conda activate starknet-example-env
 
 # Start a new devnet with clean state
 starknet-devnet
@@ -67,7 +80,7 @@ In another tab:
 ```
 # Set correct version of Node and Python virtual environment
 nvm use
-source .venv/bin/activate
+conda activate starknet-example-env
 
 # Compile
 yarn hardhat starknet-compile
@@ -86,6 +99,23 @@ code ~/.starknet_accounts/starknet_open_zeppelin_accounts.json
 ```
 
 For more [documentation](https://github.com/Shard-Labs/starknet-hardhat-plugin).
+
+
+## Update the Node dependencies
+To update the Node.js dependencies, like the Hardhat Starknet Plugig, you can use the `npm-check-updates` utility:
+```
+# Install ncu
+npm install -g npm-check-updates
+# or
+yarn global add npm-check-updates
+
+# Preview updates
+ncu
+
+# Install updates
+ncu -u
+yarn install
+``` 
 
 
 ## Verify your contract on Voyager (only on Alpha Goerli and Alpha Mainnet, no devnet)
